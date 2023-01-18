@@ -1,10 +1,8 @@
 export const phraseController = (Phrase) => {
-    return async (req, res) => {
+    return async (req, res,next) => {
         try {
             const phrases = await Phrase.find();
-            const randomIndex = Math.floor(Math.random() * phrases.length)
-            const randomPhrase = phrases[randomIndex].phrase
-            res.send(randomPhrase)
+            res.json(phrases);
         } catch (err) {
             console.log(err);
         }
