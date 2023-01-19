@@ -3,10 +3,7 @@ import { phraseController } from './controllers/phraseController.js'
 import { phraseModel } from './models/phraseModel.js'
 const router = express.Router()
 
-export const apiRouter = (function(){
- 
-    router.route("/").get(phraseController(phraseModel));
-  
-    return router;
- 
- })();
+router.route("/phrases").get(phraseController(phraseModel));
+
+
+export default router;
