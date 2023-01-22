@@ -1,9 +1,11 @@
 import express from 'express'
-import { phraseController } from './controllers/phraseController.js'
+import { getPhrase,addPhrase,deletePhrase } from './controllers/phraseController.js'
 import { phraseModel } from './models/phraseModel.js'
 const router = express.Router()
 
-router.route("/phrases").get(phraseController(phraseModel));
+router.route("/phrases").get(getPhrase(phraseModel));
+router.route("/phrases/add").post(addPhrase(phraseModel));
+router.route("/phrases/delete/:id").delete(deletePhrase(phraseModel));
 
 
 export default router;
