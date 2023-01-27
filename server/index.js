@@ -1,5 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv';
+dotenv.config();
 import router from './router.js'
 import cors from 'cors';
 import bodyParser from 'body-parser';
